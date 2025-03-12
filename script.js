@@ -8,27 +8,34 @@ function updateScores() {
     .then(data => {
       // Split the CSV data into rows
       const rows = data.split('\n');
-      if (rows.length > 0) {
-        // Get the first row (header or data)
-        const firstRow = rows[0];
+      if (rows.length >= 2) { // Ensure there are at least 2 rows
+        let html = '';
 
-        // Remove quotation marks and split into columns
-        const columns = firstRow.replace(/"/g, '').split(',');
+        // Process the first two rows
+        for (let i = 0; i < 2; i++) {
+          const row = rows[i];
+          const columns = row.replace(/"/g, '').split(',');
 
-        // Create HTML for the first row with different colors for E to H
-        const displayData = `
-          <span>${columns[0]}</span> | 
-          <span>${columns[1]}</span> | 
-          <span>${columns[2]}</span> | 
-          <span>${columns[3]}</span> | 
-          <span class="col-e">${columns[4]}</span> | 
-          <span class="col-f">${columns[5]}</span> | 
-          <span class="col-g">${columns[6]}</span> | 
-          <span class="col-h">${columns[7]}</span>
-        `;
+          // Format columns A-D (left-aligned, blue)
+          const leftContent = `
+            <span class="left">
+              ${columns[0]} / ${columns[1]} / ${columns[2]} overs ${columns[3]}
+            </span>
+          `;
 
-        // Update the ticker content smoothly
-        ticker.innerHTML = `<p>${displayData}</p>`;
+          // Format columns E-H (right-aligned, black)
+          const rightContent = `
+            <span class="right">
+              ${columns[4]} / ${columns[5]} overs ${columns[6]}
+            </span>
+          `;
+
+          // Combine left and right content
+          html += `<p>${leftContent}${rightContent}</p>`;
+        }
+
+        // Update the ticker content
+        ticker.innerHTML = html;
       } else {
         ticker.innerHTML = '<p>No data available.</p>';
       }
