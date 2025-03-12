@@ -19,14 +19,16 @@ function updateScores() {
           // Format columns A-D (left-aligned, blue)
           const leftContent = `
             <span class="left">
-              ${columns[0]} / ${columns[1]} / ${columns[2]} overs ${columns[3]}
+              ${columns[0]} ${i === 0 ? `${columns[1]} / ${columns[2]}` : `${columns[1]} ${columns[2]}`} 
+              <span class="${i === 0 ? 'highlight' : ''}">${columns[3]}</span>
             </span>
           `;
 
           // Format columns E-H (right-aligned, black)
           const rightContent = `
             <span class="right">
-              ${columns[4]} / ${columns[5]} overs ${columns[6]}
+              ${columns[4]} ${i === 0 ? `${columns[5]} / ${columns[6]}` : `${columns[5]} ${columns[6]}`} 
+              <span class="${i === 0 ? 'highlight' : ''}">${columns[7]}</span>
             </span>
           `;
 
