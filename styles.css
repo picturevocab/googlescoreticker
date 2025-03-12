@@ -2,9 +2,9 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: transparent; /* Transparent background for video recording */
-  color: transparent;
-  height: 100vh;
+  background: ; /* Transparent background for video recording */
+  color: ;
+  height: ;
   overflow: hidden;
 }
 
