@@ -1,5 +1,5 @@
 const sheetId = '1RPlTeCnvMs-Y9ZDR-6AtG2Vk2HY1cERs8dQB-_d5BrM';
-const csvUrl = `https://docs.google.com/spreadsheets/d/1RPlTeCnvMs-Y9ZDR-6AtG2Vk2HY1cERs8dQB-_d5BrM/gviz/tq?tqx=out:csv`;
+const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv`;
 const ticker = document.getElementById('score-ticker');
 
 function updateScores() {
