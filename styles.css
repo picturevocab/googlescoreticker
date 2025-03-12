@@ -2,10 +2,10 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: ; /* Transparent background for video recording */
-  color: ;
+  background: ; /* Transparent background */
+  color: ; /* Default text color */
   height: ;
-  overflow: hidden;
+  overflow: ;
 }
 
 /* Score Ticker Container */
@@ -45,18 +45,9 @@ body {
   text-align: right;
 }
 
-/* Animation for Live Updates */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#score-ticker p {
-  animation: ;
+/* Highlight D1 and H1 in light green */
+#score-ticker p .highlight {
+  background-color: rgba(144, 238, 144, 0.7); /* Light green background */
+  padding: 2px 5px; /* Add padding for better visibility */
+  border-radius: 5px; /* Rounded corners */
 }
