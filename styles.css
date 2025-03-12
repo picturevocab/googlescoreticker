@@ -1,0 +1,58 @@
+/* Basic Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Score Ticker Container */
+#score-ticker {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px; /* Smaller rounded corners */
+  padding: 10px 20px; /* Reduced padding */
+  width: auto; /* Auto width to fit content */
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Score Text */
+#score-ticker p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+}
+
+/* Different Colors for Columns E to H */
+#score-ticker p .col-e { color: #ffa500; } /* Coral */
+#score-ticker p .col-f { color: #ffa500; } /* Purple */
+#score-ticker p .col-g { color: #ffa500; } /* Green */
+#score-ticker p .col-h { color: #ffa500; } /* Orange */
+
+/* Animation for Live Updates */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#score-ticker p {
+  animation: fadeIn 0.5s ease-out;
+}
